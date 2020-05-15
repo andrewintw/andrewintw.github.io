@@ -245,23 +245,18 @@
       <div id="wpac-rating"></div>
     </div>
   </div>
-
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" 
-  src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v7.0&appId=251328089410373&autoLogAppEvents=1">
-</script>
-
     <div class="social-like">
-        <div class="fb-like"
-          data-href="https://andrewintw.github.io/2020/05/15/test3/" 
-          data-width="" 
-          data-layout="button_count" 
-          data-action="like" 
-          data-size="large" 
-          data-share="true">
+        <div class="fb_like">
+          <div class="fb-like"
+            data-href=""
+            data-width=""
+            data-layout="button_count"
+            data-action="like"
+            data-size="large"
+            data-share="true">
+          </div>
         </div>
     </div>
-
 
         
     <div class="post-nav">
@@ -287,12 +282,14 @@
           </div>
           
     
-  <div class="fb-comments" 
-    data-href="https://andrewintw.github.io/2020/05/15/test2/"
-    data-numposts="5"
-    data-width="100%"
-    data-colorscheme="light"
-    data-order-by="reverse_time">
+  <div class="comments" id="comments">
+    <div class="fb-comments"
+       data-href="https://andrewintw.github.io/2020/05/15/test2/"
+       data-numposts="5"
+       data-width="100%"
+       data-colorscheme="light"
+       data-order-by="reverse_time">
+    </div>
   </div>
   
 
@@ -433,8 +430,22 @@
 
 
 
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v7.0&appId=251328089410373&autoLogAppEvents=1"></script>
+  <script>
+    function fbAsyncInit() {
+      FB.init({
+        appId  : '251328089410373',
+        xfbml  : 1,
+        version: 'v7.0'
+      });
+    }
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
 
 
